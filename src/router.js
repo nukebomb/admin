@@ -3,15 +3,27 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Test from './views/test.vue'
+import AddItem from './views/AddItem.vue'
+import ShowItem from './views/ShowItem.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/manage',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [{
+        path: '/additem',
+        component: AddItem,
+        meta: ['内容管理','添加条目']
+      },
+      {
+        path: '/showitem',
+        component: ShowItem,
+        meta: ['内容管理','查询/修改']
+      }]
     },
     {
       path: '/about',
@@ -30,6 +42,7 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: Test
-    }
+    },
+
   ]
 })

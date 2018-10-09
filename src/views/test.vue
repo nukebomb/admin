@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <el-menu class="topmenu"
+    <el-row style="height: 100%;">
+      <el-col :span="10" style="height: 100%;">
+        <el-menu class="topmenu"
       default-active="2"
       background-color="#545c64"
       text-color="#fff"
@@ -31,6 +33,8 @@
         <span slot="title">导航四</span>
       </el-menu-item>
     </el-menu>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -46,7 +50,7 @@ export default {
   height: 100%;
 }
 .topmenu {
-  width: 100%;
+  text-align: left; 
   height: 100%;
 }
 </style>
